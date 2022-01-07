@@ -18,6 +18,11 @@ export default {
   fetch({ store, params }) {
       store.commit('app/ADD_COUNT', params.id)
   },
+  head() {
+    return {
+      title: "Tutorial Detail",
+    }
+  },
   computed: {
     ...mapState({
       count: (state) => state.app.count,

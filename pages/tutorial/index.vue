@@ -7,6 +7,11 @@
 <script>
 export default {
   name: 'TutorialPage',
+  head() {
+    return {
+      title: "Tutorial",
+    }
+  },
 }
 </script>
 

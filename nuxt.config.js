@@ -4,7 +4,9 @@ export default {
     host: "0.0.0.0" // default: localhost
   },
   head: {
-    title: "nuxt-app",
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} | Nuxt-App` : "Nuxt-App"
+    },
     htmlAttrs: {
       lang: "en"
     },
