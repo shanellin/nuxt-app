@@ -69,6 +69,7 @@ More information about the usage of this directory in [the documentation](https:
 
 ### `structure`
 
+```bash
 ├─assets  // 存放靜態資源（如：scss）
 │
 ├─layouts // 頁面主要布局、自定義錯誤頁面
@@ -95,3 +96,4 @@ More information about the usage of this directory in [the documentation](https:
 ├─utils       // 工具方法
 │
 │nuxt.config.js   // Nuxt.js應用配置
+```
