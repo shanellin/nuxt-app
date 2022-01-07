@@ -1,0 +1,72 @@
+$desktop: 1000px;
+$tablet: 768px;
+
+// space settings
+$max-width: 1120px;
+
+$desktop-header-height: 100px;
+$mobile-header-height: 80px;
+
+$desktop-sub-header-height: 76px;
+$mobile-sub-header-height: 60px;
+
+$x-large-padding: $desktop-header-height;
+$large-padding: $mobile-header-height;
+$medium-padding: 3.75rem; // 60px
+$small-padding: 1.875rem; // 30px
+$border-radius: 8px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin notDesktop {
+  @media (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+$colors: (primary: #051923,
+  primaryDark: #056ea2,
+  primaryLight: #019fe6,
+  primaryTransparent: rgba(1, 159, 230, 0.16),
+  secondary: #003554,
+  basicWhite: #fff,
+  bgLight: #fafafa,
+  bgLight2: #f9fbfe,
+  bgGrey: #f9f9fc,
+  bgGrey2: rgba(249, 251, 254, 0.8),
+  bgGrey3: rgba(249, 251, 254, 0),
+  bgBlue: #004462,
+  bgBlueLight: #0582ca,
+  bgBlueLighter: #ccebfa,
+  bgBlueLightest: #cbefff,
+  fontLight: rgba(5, 25, 35, 0.5),
+  fontLight2: rgba(5, 25, 35, 0.8),
+  fontPlaceholder: rgba(230, 230, 230, 1),
+  linkHover: #00b0ff,
+  overlay: rgba(5, 25, 35, 0.3),
+  overlay2: rgba(0, 0, 0, 0.5),
+  border: rgba(0, 12, 76, 0.15),
+  shadow: rgba(5, 25, 35, 0.08),
+  shadow2: rgba(5, 25, 35, 0.2),
+  shadowHard: rgba(5, 25, 35, 0.04),
+  warning: #ed232a,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// transition
+@mixin transition-ease-out {
+  transition: 0.5s ease-out;
+}
